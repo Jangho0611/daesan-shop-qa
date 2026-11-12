@@ -201,6 +201,22 @@ header{background:#fffefa;padding:18px max(4vw,calc((100vw - 1360px)/2));border-
 .guest-cart{padding:20px;background:white;border:1px solid var(--stroke)}
 .guest-cart p{margin:0 0 12px}.guest-cart div{display:flex;gap:8px}
 .guest-cart a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border:1px solid #123628;border-radius:6px}.guest-cart .cart-login{background:#123628;color:white}
+
+/* Two product cards per row on phones. Keep controls within each card. */
+@media (min-width: 360px) and (max-width: 430px) {
+  .trade-results .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 8px;
+  }
+  .trade-results .catalog-card .product-body { padding: 6px 7px 8px; }
+  .trade-results .catalog-card h3 { overflow-wrap: anywhere; }
+  .catalog-card .product-body > small { overflow: hidden; text-overflow: ellipsis; }
+  .catalog-card .compact-buttons { grid-template-columns: minmax(44px, 2fr) minmax(0, 3fr); gap: 4px; }
+  .catalog-card .compact-buttons button { font-size: 13px; white-space: normal; line-height: 1.2; }
+  .catalog-card .compact-add svg { display: none; }
+  .catalog-card .variant-trigger { width: 100%; min-width: 0; }
+}
 .office-head{display:flex;align-items:center;gap:20px;padding:10px max(20px,5vw);background:#fffefa;border-bottom:1px solid #ced9cf}
 .office-head nav{display:flex;flex-wrap:wrap;gap:3px 12px}.office-head nav a,.account-orders{display:inline-flex;align-items:center;min-height:44px;padding:0 8px}.office-head [aria-current=page]{color:#123628;font-weight:750;box-shadow:inset 0 -3px #123628}
 .customer-admin,.inquiry-page{margin:28px auto 60px}.customer-admin h1,.inquiry-page h1{font-size:clamp(25px,3vw,34px);line-height:1.25}
